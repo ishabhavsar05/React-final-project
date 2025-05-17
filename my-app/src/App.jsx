@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <h1>Hello from my new project</h1>
+      <p><b>this is my new project of react app</b></p>
     </>
   )
 }
