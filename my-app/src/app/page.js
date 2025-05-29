@@ -5,6 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 export default function Home() {
   const [pickupLocation, setPickupLocation] = useState('');
@@ -194,28 +196,27 @@ export default function Home() {
       </div>
 
       {/* ban2 */}
-      <div>
-        <div className="mt-10 relative max-w-full overflow-hidden ml-[6.25rem] sm:ml-[0rem] md:ml-[0rem]">
-          {/* ml-25 નું equivalent Tailwind માં ml-[100px] કે custom value આપો, Tailwind default ના scaleમાં ml-25 નથી, એટલે custom value આપી */}
+      <div className="mt-10 relative max-w-[580px] max-h-[500px] ml-[2rem]  md:ml-0 max-w-full md:max-w-[900px] lg:ml-15 xl:max-w-full mr-10 ">
+        <Image
+          src="/ban2.webp"
+          width={1300}
+          height={400}
+          alt="Banner Image"
+          className="w-full h-[150px] sm:mx-auto sm:w-[300px]  md:w-full md:h-[250px] xl:w-full  rounded object-cover"
+        />
 
-          <Image
-            src="/ban2.webp"
-            width={1300}
-            height={500}
-            alt="Banner Image"
-            className="w-full h-auto rounded object-cover"
-          />
+        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center mt-10 px-4">
+          <p className="text-sm sm:text-base ml-35 md:text-xl md:ml-35 xl:text-xl 2xl:text-2xl font-bold whitespace-nowrap text-left sm:text-center md:text-left sm:ml-0 md:ml-10">
+            OUR ONLY PLAN IS TO MAKE SURE YOU KEEP YOURS
+          </p>
 
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center mt-10 px-4">
-            <p className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap sm:ml-5 md:ml-10">
-              OUR ONLY PLAN IS TO MAKE SURE YOU KEEP YOURS
-            </p>
-            <p className="text-sm sm:text-lg md:text-xl font-bold whitespace-nowrap sm:ml-5 md:ml-10 text-left mt-2">
-              SAVE 20% or more on pay now rates + an extra <br className="hidden sm:block" />
-              $15 off when you spend $175+.
-            </p>
+          <p className="text-xs sm:text-sm ml-35 md:text-lg md:ml-35 xl:text-xl 2xl:text-2xl font-bold whitespace-nowrap text-left sm:text-center md:text-left mt-2 sm:ml-0 md:ml-10">
+            SAVE 20% or more on pay now rates + an extra <br />
+            $15 off when you spend $175+.
+          </p>
 
-            <button className="btn btn-dark px-3 py-2 mt-3 text-sm md:text-base">
+          <div className="flex justify-start sm:justify-center ml-35 md:justify-start md:ml-35  mt-3 ">
+            <button className="btn btn-dark px-3 py-1 text-xs sm:text-sm md:text-base xl:text-xl px-4 py-2 2xl:text-2xl">
               BOOK NOW
             </button>
           </div>
@@ -226,18 +227,331 @@ export default function Home() {
 
 
 
+
       {/* offers */}
 
-      <div className='ml-20'>
-        <div>
-          <h1>
+      <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between w-[90%] mx-auto gap-4 sm:gap-0">
+        {/* Left Content */}
+        <div className="w-full sm:w-8/12 md:w-9/12">
+          <p className="text-lg sm:text-xl font-semibold text-gray-800 text-left sm:text-left">
             EXPLORE ALL THE WAYS YOU CAN SAVE
-          </h1>
-          <p>
-
+          </p>
+          <p className="text-sm sm:text-base text-gray-600 text-left sm:text-left">
+            Save on your next daily or monthly car rental with these deals and offers.
           </p>
         </div>
+
+        {/* Button */}
+        <div className="w-full sm:w-4/12 md:w-3/12 flex sm:justify-end justify-center">
+          <a
+            href="https://www.avis.com/en/offers/us-offers?ICID=av-all-220322-hp-offerheadbtn-usoffers"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              type="button"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded w-full sm:w-auto"
+            >
+              VIEW ALL OFFERS
+            </button>
+          </a>
+        </div>
       </div>
+
+      {/* Sale */}
+
+      <div className="mt-20 mx-5 md:mx-20">
+        <div className="flex flex-col sm:flex-col md:flex-row  gap-4">
+          {/* Card 1 */}
+          <div className="w-full sm:w-full md:w-1/2 lg:w-1/3 bg-black rounded overflow-hidden">
+            <div className="relative h-[200px] md:h-[250px]">
+              <Image
+                src="/sale1.webp"
+                alt="Summer Sale"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t"
+              />
+            </div>
+            <div className="p-4 bg-white text-center space-y-2">
+              <h3 className="text-lg font-bold text-black">LIMITED TIME SUMMER SALE</h3>
+              <p className="text-sm text-black">Get a FREE UPGRADE + up to 35% off Pay Now.</p>
+              <Link href="https://www.avis.com/en/offers/us-offers/summer-sale?ICID=av-all-250521-hp-s1-summersale">
+                <button className="btn btn-primary btn-primary-avis mt-2 px-4 py-2 text-sm">Save now</button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="w-full sm:w-full md:w-1/2 lg:w-1/3 bg-black rounded overflow-hidden">
+            <div className="relative h-[200px] md:h-[250px]">
+              <Image
+                src="/sale2.webp"
+                alt="Summer Sale"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t"
+              />
+            </div>
+            <div className="p-4 bg-white text-center space-y-2">
+              <h3 className="text-lg font-bold text-black">LIMITED TIME SUMMER SALE</h3>
+              <p className="text-sm text-black">Get a FREE UPGRADE + up to 35% off Pay Now.</p>
+              <Link href="https://www.avis.com/en/offers/us-offers/summer-sale?ICID=av-all-250521-hp-s1-summersale">
+                <button className="btn btn-primary btn-primary-avis mt-2 px-4 py-2 text-sm">Save now</button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="w-full sm:w-full md:w-1/2 lg:w-1/3 bg-black rounded overflow-hidden">
+            <div className="relative h-[200px] md:h-[250px]">
+              <Image
+                src="/sale3.webp"
+                alt="Summer Sale"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t"
+              />
+            </div>
+            <div className="p-4 bg-white text-center space-y-2">
+              <h3 className="text-lg font-bold text-black">LIMITED TIME SUMMER SALE</h3>
+              <p className="text-sm text-black">Get a FREE UPGRADE + up to 35% off Pay Now.</p>
+              <Link href="https://www.avis.com/en/offers/us-offers/summer-sale?ICID=av-all-250521-hp-s1-summersale">
+                <button className="btn btn-primary btn-primary-avis mt-2 px-4 py-2 text-sm">Save now</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* benifit travel partner */}
+
+      <div className="ml-5 sm:ml-10 md:ml-20 mt-10">
+        <h1 className="font-bold text-lg md:text-xl mb-10">
+          BENEFITS FROM OUR TRAVEL PARTNERS
+        </h1>
+
+        <div className="mx-4 mt-5  sm:mx-8 md:mx-20">
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Card 1 */}
+            <div className="flex flex-col sm:flex-row w-full lg:w-2/3 ">
+              <div
+                className="sm:w-1/3 h-[150px] bg-cover bg-center"
+                style={{ backgroundImage: "url('/amazon.webp')" }}
+              ></div>
+              <div className="p-4 sm:w-2/3 text-left space-y-2 flex flex-col justify-center">
+                <p className="text-sm text-black">
+                  Get up to 35% OFF your rental when you Pay Now, plus earn more with 10% BACK in an Amazon.com Gift Card.
+                </p>
+                <Link href="https://www.avis.com/en/offers/partners/amazon-benefits?ICID=av-all-220322-hp-s4-amazon">
+                  <button className="btn btn-primary-avis mt-2 px-4 py-2 text-sm font-bold">
+                    BOOK NOW
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col sm:flex-row w-full lg:w-2/3 ">
+              <div
+                className="sm:w-1/3 h-[150px] bg-cover bg-center"
+                style={{ backgroundImage: "url('/member.webp')" }}
+              ></div>
+              <div className="p-4 sm:w-2/3 text-left space-y-2 flex flex-col justify-center">
+                <p className="text-sm text-black">
+                  Get up to 35% OFF your rental when you Pay Now, plus earn more with 10% BACK in an Amazon.com Gift Card.
+                </p>
+                <Link href="https://www.avis.com/en/offers/partners/amazon-benefits?ICID=av-all-220322-hp-s4-amazon">
+                  <button className="btn btn-primary-avis mt-2 px-4 py-2 text-sm font-bold">
+                    BOOK NOW
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col sm:flex-row w-full lg:w-2/3 ">
+              <div
+                className="sm:w-1/3 h-[150px] bg-cover bg-center"
+                style={{ backgroundImage: "url('/usa.webp')" }}
+              ></div>
+              <div className="p-4 sm:w-2/3 text-left space-y-2 flex flex-col justify-center">
+                <p className="text-sm text-black">
+                  Get up to 35% OFF your rental when you Pay Now, plus earn more with 10% BACK in an Amazon.com Gift Card.
+                </p>
+                <Link href="https://www.avis.com/en/offers/partners/amazon-benefits?ICID=av-all-220322-hp-s4-amazon">
+                  <button className="btn btn-primary-avis mt-2 px-4 py-2 text-sm font-bold">
+                    BOOK NOW
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* sales */}
+
+      <div
+        className="bg-cover bg-center bg-no-repeat opacity-100 mt-10"
+        style={{
+          backgroundImage: "url('/car1.webp')",
+        }}
+      >
+        <div className="text-white   w-50 h-50 text-white px-4 sm:px-10 md:px-20 py-10 space-y-4">
+          <p className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            AVIS CAR SALES
+          </p>
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+            Explore our wide selection of top-quality, budget-friendly vehicles.
+          </p>
+          <a
+            href="https://www.aviscarsales.com/?utm_source=avis.com-banner&utm_medium=referral"
+            target="_blank"
+          >
+            <button className="btn bg-danger text-light btn-primary-avis px-6 py-2 text-sm font-semibold mt-2">
+              Shop Now
+            </button>
+          </a>
+
+          <p className="text-3xl sm:text-4xl md:text-5xl font-bold pt-8">
+            RUBYCAR.COM
+          </p>
+          <p className="text-base sm:text-lg md:text-xl">
+            100% Online Car Buying Delivered Straight to Your Door!
+          </p>
+          <a
+            href="https://www.ruby-car.com/?utm_source=avis.com-banner&utm_medium=referral"
+            target="_blank"
+          >
+            <button className="btn bg-danger text-light btn-primary-avis px-6 py-2 text-sm font-semibold mt-2">
+              Shop Now
+            </button>
+          </a>
+        </div>
+      </div>
+
+
+      {/* cities */}
+
+      <div className="mt-30 flex flex-col sm:flex-row items-start sm:items-center justify-between w-[90%] mx-auto gap-4 sm:gap-0 mb-20">
+        {/* Left Content */}
+        <div className="w-full sm:w-8/12 md:w-9/12">
+          <h1 className="text-lg sm:text-xl font-bold  text-left sm:text-left">
+            FIND YOUR CAR RENTAL IN POPULAR CITIES
+          </h1>
+
+        </div>
+
+        {/* Button */}
+        <div className="w-full sm:w-4/12 md:w-3/12 flex sm:justify-end justify-center">
+          <a
+            href="https://www.avis.com/en/offers/us-offers?ICID=av-all-220322-hp-offerheadbtn-usoffers"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              type="button"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded w-full sm:w-auto"
+            >
+              VIEW ALL LOCATIONS
+            </button>
+          </a>
+        </div>
+      </div>
+
+      {/* cities-links */}
+
+      <div className="text-red-600 font-semibold  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 sm:px-10 md:px-20 mt-10 ml-10 ">
+        {/* Column 1 */}
+        <div>
+          <Link href="#" className="text-red-600 block  mb-1">Car Rentals in Atlanta, GA</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Boston, MA</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Charlotte, NC</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Albuquerque, NM</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Brooklyn, NY</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Charleston, SC</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Anchorage, AK</Link>
+        </div>
+
+        {/* Column 2 */}
+        <div>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Austin, TX</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Chicago, IL</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Dallas, TX</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Denver, CO</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Colorado Springs, CO</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Columbus, OH</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Fort Lauderdale, FL</Link>
+        </div>
+
+        {/* Column 3 */}
+        <div>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Las Vegas, NV</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Miami, FL</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Los Angeles, CA</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Houston, TX</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Kauai, HI</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Honolulu, HI</Link>
+          <Link href="#" className="text-red-600 block mb-1">Car Rentals in Nashville, TN</Link>
+        </div>
+      </div>
+
+
+      {/* popular airports */}
+
+      <div className="mt-30 flex flex-col sm:flex-row items-start sm:items-center justify-between w-[90%] mx-auto gap-4 sm:gap-0">
+        {/* Left Content */}
+        <div className="w-full sm:w-8/12 md:w-9/12">
+          <h1 className="text-lg sm:text-xl font-bold  text-left sm:text-left ">
+            FIND YOUR CAR RENTAL AT POPULAR AIRPORTS
+          </h1>
+
+        </div>
+
+        {/* Button */}
+        <div className="w-full sm:w-4/12 md:w-3/12 flex sm:justify-end justify-center">
+          <a
+            href="https://www.avis.com/en/offers/us-offers?ICID=av-all-220322-hp-offerheadbtn-usoffers"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              type="button"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded w-full sm:w-auto"
+            >
+              VIEW ALL AIRPORTS
+            </button>
+          </a>
+        </div>
+      </div>
+      
+      {/* airports-link */}
+
+      <div className="font-semibold grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 sm:px-10 md:px-20 mt-10 ml-10 mb-20">
+        {/* Column 1 */}
+        <div>
+          <Link href="#" className="text-red-600 block  mb-1">Orlando International Airport (MCO)</Link>
+          <Link href="#" className="text-red-600 block mb-1">Los Angeles International Airport (LAX)</Link>
+          <Link href="#" className="text-red-600 block mb-1">Denver International Airport (DEN)</Link>
+         </div>
+
+        {/* Column 2 */}
+        <div>
+          <Link href="#" className="text-red-600 block mb-1">Atlanta International Airport (ATL)</Link>
+          <Link href="#" className="text-red-600 block mb-1">Dallas/Fort Worth International Airport (DFW)</Link>
+          <Link href="#" className="text-red-600 block mb-1">San Francisco International Airport (SFO)</Link>
+          </div>
+
+        {/* Column 3 */}
+        <div>
+          <Link href="#" className="text-red-600 block mb-1">Chicago O’Hare International Airport (ORD)</Link>
+          <Link href="#" className="text-red-600 block mb-1">Boston Logan International Airport (BOS)</Link>
+          <Link href="#" className="text-red-600 block mb-1">San Diego International Airport (SAN)</Link>
+          <Link href="#" className="text-red-600 block mb-1">Miami International Airport (MIA)</Link>
+        </div>
+      </div>
+
     </div>
   );
 }

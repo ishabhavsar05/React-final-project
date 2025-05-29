@@ -18,7 +18,7 @@ export const Footer = () => {
       `}</style>
 
       <div className="bg-dark text-white py-4 px-3 px-md-5 w-100">
-        <div className="d-flex flex-column ml-50 sm: flex-md-row flex-wrap gap-10 mt-4">
+        <div className="d-flex flex-column ml-10 sm: flex-md-row flex-wrap gap-10 mt-4">
           {/* COLUMN 1 */}
           <div className="min-w-150px mb-3">
             <h2 className="fw-bold fs-5">TOP DESTINATIONS</h2>
